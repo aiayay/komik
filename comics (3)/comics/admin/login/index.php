@@ -36,11 +36,11 @@ if (isset($_SESSION['email'])){
                                             <div class="col-md-12">
                                                 <div class="card-body">
                                                     <h4 class="mb-3 f-w-400 text-center">Login</h4>
-                                                    <hr>
-                                                    <div class="button-container">
-                                                        <div class="button logina"><a href="?page=login/index">LOGIN</a></div>
-                                                        <div class="button signupa"><a href="?page=admin/signup/index">SIGNUP</a></div>
-                                                    </div>  
+                                                    <hr>  
+                                                    <div class="main-buttona text-center">
+                                                        <a href="?page=login/index" class="login">LOGIN</a>
+                                                        <a href="?page=admin/signup/index" class="signup">SIGNUP</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -53,8 +53,8 @@ if (isset($_SESSION['email'])){
                                                 
                                             </div>
                                         </div>
-                                        <div class="main-button text-center">
-                                            <button type="submit" class="btn btn-primary">Login</button>
+                                        <div class="main-buttona text-center">
+                                            <button type="submit" class="signupa">Login</button>
                                         </div>
                                         <br>
                                         <p class="text-center">Forgot Password? <a href="?page=signup/index">Reset</a></p>

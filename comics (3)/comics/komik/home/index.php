@@ -33,23 +33,23 @@
                   </div>
                   <div class="row">
                     <div class="col-lg-12">
-                      <div class="clips">
-                        <div class="row">
-                          <div class="col-lg-12">
-                            <div class="heading-section">
-                              <h4><em>Koleksi</em> Terbaru</h4>
-                            </div>
-                          </div>
-                          <?php
-                               $komik = mysqli_query($koneksi, "SELECT * FROM komik JOIN user ON komik.id_user=user.id_user ORDER BY id_komik DESC");
+                    <div class="most-popular">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="heading-section">
+                    <h4><em>Komik</em> Pilihan</h4>
+                  </div>
+                  <div class="row">
+                            <?php
+                               $komik = mysqli_query($koneksi, "SELECT * FROM komik JOIN user ON komik.id_user=user.id_user ORDER BY id_komik DESC LIMIT 4");
                                 while($data= mysqli_fetch_array($komik)):
                             ?>
-                           <div class="col-lg-3 col-sm-6">
-                            <div class="item">
-                                <a href="?page=komik/detail_komik&id_komik=<?php echo $data['id_komik'];?>"><img class="img-fluid" src="admin/assets/images/cover/<?= $data['cover']?>" alt="" width="100px" height="100px"></a>
-                              <h4><?= $data['judul']; ?><br /><span><?= $data['nama_lengkap']?></span></h4>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="item">
+                                    <a href="?page=komik/detail_komik&id_komik=<?php echo $data['id_komik'];?>"><img class="img-fluid" src="admin/assets/images/cover/<?= $data['cover']?>" alt="" width="100px" height="100px"></a>
+                                  <h4><?= $data['judul']; ?><br /><span><?= $data['nama_lengkap']?></span></h4>
+                                </div>
                             </div>
-                          </div>
                           <?php endwhile; ?>
                           <div class="col-lg-12 d-flex justify-content-between">
                         <div class="main-button">
@@ -59,8 +59,11 @@
                           <a href="#">Next</a>
                         </div>
                       </div>
-                          </div>                          
-                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
                       </div>
                     </div>
                   </div>
@@ -87,7 +90,6 @@
                 </div>
                 <div class="col-3">
                 <a href="?page=komik/detail_komik&id_komik=<?php echo $data['id_komik'];?>"><h4><?= $data['judul']; ?><br /><span><?= $data['nama_lengkap']?></span></h4></a>
-                  <p><?php echo $data['nama_lengkap']; ?></p>
                 </div>
                 <div class="col-7">
                   <p><?php echo $data['deskripsi']; ?></p>
