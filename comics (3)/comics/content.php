@@ -4,4 +4,4 @@ if (!empty ($_GET['page'])){
 }else {
     include "home/index.php";
 }
-?>fhgjdfh
+?>
