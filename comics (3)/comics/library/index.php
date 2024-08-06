@@ -1,4 +1,7 @@
+<?php
 
+$id_user = $_SESSION['id_user'];
+?>
 <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -21,8 +24,9 @@
                                     JOIN detail_pesanan ON pesanan.id_pesanan = detail_pesanan.id_pesanan
                                     JOIN user ON pesanan.id_user = user.id_user
                                     JOIN paket ON detail_pesanan.id_paket = paket.id_paket
-                                    JOIN komik ON detail_pesanan.id_komik = komik.id_komik WHERE status = 'diterima'
-                                    ORDER BY pesanan.id_pesanan DESC
+                                    JOIN komik ON detail_pesanan.id_komik = komik.id_komik 
+                                    WHERE pesanan.id_user = '$id_user' AND pesanan.status = 'diterima'
+                                    ORDER BY komik.id_komik DESC
                                 ");
 
                                 while($item = mysqli_fetch_array($pesanan)):
@@ -32,11 +36,7 @@
                                         <div class="item">
                                             
                                             <a href="?page=library/content&id_komik=<?php echo $item['id_komik'];?>"><img class="img-fluid" src="admin/assets/images/cover/<?= $item['cover']?>" alt="" width="100px" height="100px"></a>
-                                            <h4><?= $item['judul']; ?><br /><span><?= $item['nama_lengkap']?></span></h4>
-                                            <ul>
-                                                <li><i class="fa fa-star"></i> 4.8</li>
-                                                <li><i class="fa fa-download"></i> 2.3M</li>
-                                            </ul>                                        
+                                            <h4><?= $item['judul']; ?><br /><span><?= $item['nama_lengkap']?></span></h4>                                       
                                         </div>
                                     </div>
                                 <?php endwhile; ?>

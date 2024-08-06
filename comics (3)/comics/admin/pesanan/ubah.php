@@ -1,11 +1,12 @@
 <?php
 
-
-
 $getid = $_GET['id_pesanan'];
 
-$search = mysqli_query($koneksi,"SELECT * FROM pesanan where id_pesanan ='$getid'");
+$search = mysqli_query($koneksi,"SELECT * FROM pesanan 
+join user on pesanan.id_user=user.id_user where id_pesanan ='$getid'");
 $item = mysqli_fetch_array($search);
+
+$id_user = $item['id_user'];
 
 ?>
 
@@ -41,6 +42,48 @@ $item = mysqli_fetch_array($search);
                         </li> -->
                         <button type="submit" class="btn  btn-primary">Submit</button>
                       </ul>
+                      <ul>
+                        <li>
+                        <td><img src="assets/images/bukti_bayar/<?=$item ['bukti_bayar']?>" width="100"></td>
+                        </li>
+                      </ul>
+                      
+                  <table class="table table-striped custom-table" style="color: white;">
+                              <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Judul</th>
+                                        <th>Deskripsi</th>
+                                        <th>Cover Komik</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $no=1;
+                                $query = "
+                                  SELECT pesanan.id_pesanan, komik.*, paket.nama_paket, user.id_user
+                                  FROM pesanan
+                                  JOIN detail_pesanan ON pesanan.id_pesanan = detail_pesanan.id_pesanan
+                                  JOIN user ON pesanan.id_user = user.id_user
+                                  JOIN paket ON detail_pesanan.id_paket = paket.id_paket
+                                  JOIN komik ON detail_pesanan.id_komik = komik.id_komik
+                                  WHERE pesanan.id_user = '$id_user'
+                                      ORDER BY komik.id_komik ASC 
+                                ";
+                                $data_pesanan = mysqli_query($koneksi, $query);
+                                while($data = mysqli_fetch_array($data_pesanan)){
+                                ?>
+                                    <tr>
+                                        <td><?=  $no++; ?></td>
+                                        <td><?= $data['judul']; ?></td>
+                                        <td><?= $data['nama_paket']; ?></td> 
+                                       
+                                        <td><img src="assets/images/cover/<?=$data ['cover']?>" width="100"></td>                                 
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                    </table>
+                    
                     </div>
                   </div>
                 </form>

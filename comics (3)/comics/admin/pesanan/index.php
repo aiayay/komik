@@ -25,11 +25,11 @@
                   <tr>
                     <th>No</th>
                     <th>Nama User</th>
-                    <th>Komik</th>
+                
                     <th>Jenis Paket</th>
                     <th>Tanggal Mulai</th>
                     <th>Tanggal Habis</th>
-                    <th>Bukti Bayar</th>
+                    <!-- <th>Bukti Bayar</th> -->
                     <th>Status</th>
                     <th>Aksi</th>
                   </tr>
@@ -43,29 +43,25 @@
                     $_SESSION['tanggal_dari'] = $_GET['tanggal_dari'];
                     $_SESSION['tanggal_sampai'] = $_GET['tanggal_sampai'];
                     $tanggal_dari = $_SESSION['tanggal_dari'];
-      $tanggal_sampai = $_SESSION['tanggal_sampai'];
+                    $tanggal_sampai = $_SESSION['tanggal_sampai'];
 
                     $query = "
-                      SELECT pesanan.id_pesanan, user.nama_lengkap, komik.judul, paket.nama_paket, 
-                        pesanan.tgl_pesanan, pesanan.tgl_habis, pesanan.bukti_bayar, pesanan.status
+                      SELECT pesanan.*, user.nama_lengkap, paket.nama_paket, user.id_user
                       FROM pesanan
                       JOIN detail_pesanan ON pesanan.id_pesanan = detail_pesanan.id_pesanan
                       JOIN user ON pesanan.id_user = user.id_user
                       JOIN paket ON detail_pesanan.id_paket = paket.id_paket
-                      JOIN komik ON detail_pesanan.id_komik = komik.id_komik
                       WHERE pesanan.tgl_pesanan BETWEEN '$tanggal_dari' AND '$tanggal_sampai'
-                      ORDER BY pesanan.id_pesanan DESC
+                      ORDER BY pesanan.id_pesanan DESC 
                     ";
 
                   } else {
                     $query = "
-                      SELECT pesanan.id_pesanan, user.nama_lengkap, komik.judul, paket.nama_paket, 
-                        pesanan.tgl_pesanan, pesanan.tgl_habis, pesanan.bukti_bayar, pesanan.status
+                      SELECT pesanan.*, user.nama_lengkap, paket.nama_paket,user.id_user
                       FROM pesanan
                       JOIN detail_pesanan ON pesanan.id_pesanan = detail_pesanan.id_pesanan
                       JOIN user ON pesanan.id_user = user.id_user
                       JOIN paket ON detail_pesanan.id_paket = paket.id_paket
-                      JOIN komik ON detail_pesanan.id_komik = komik.id_komik
                       ORDER BY pesanan.id_pesanan DESC
                     ";
                   }
@@ -77,14 +73,13 @@
                   <tr>
                     <td><?=  $no++; ?></td>
                     <td><?= $item['nama_lengkap']; ?></td>
-                    <td><?= $item['judul']; ?></td>
-                    <td><?= $item['nama_paket']?></td>
+                    <!-- <td><?= $item['nama_paket']?></td> -->
                     <td><?= $item['tgl_pesanan']?></td>
                     <td><?= $item['tgl_habis']?></td>
-                    <td><img src="assets/images/bukti_bayar/<?=$item ['bukti_bayar']?>" width="100"></td>
+                    <!-- <td><img src="assets/images/bukti_bayar/<?=$item ['bukti_bayar']?>" width="100"></td> -->
                     <td><?= $item['status']?></td>
                     <td>
-                      <a href="?page=pesanan/ubah&id_pesanan=<?php echo $item['id_pesanan'];?>" class="btn btn-success">Ubah</a><br><br>
+                      <a href="?page=pesanan/ubah&id_pesanan=<?php echo $item['id_pesanan'];?>" class="btn btn-success">Detail</a><br><br>
                       <a onclick="return confirm('yakin mau dihapus??')" href="pesanan/hapus.php?id_pesanan=<?php echo $item['id_pesanan'];?>" class="btn btn-danger">Hapus</a>
                     </td>
                   </tr>
@@ -98,3 +93,4 @@
     </div>
   </div>
 </div>
+<!-- JOIN komik ON detail_pesanan.id_komik = komik.id_komik -->
