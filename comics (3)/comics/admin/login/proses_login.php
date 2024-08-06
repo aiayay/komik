@@ -36,7 +36,8 @@ window.location.href='../index.php'
 }else{
     echo "<script>
     alert('email atau password salah')
-    window.location.href='index.php'
+    window.location.href='../../?page=home/index'
     </script>";
 }
+mysqli_close($koneksi);
 ?>

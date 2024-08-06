@@ -39,7 +39,12 @@ $item = mysqli_fetch_array($search);
                             <input type="hidden" name="foto_lama" value="<?= $item['cover']?>">
                             <input type="file" class="form-control" name="cover">
                         </li>
-                        <button type="submit" class="btn  btn-primary">Submit</button>
+                        <li>
+                          <br>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                        </li>
+                             
+                          
                       </ul>
                     </div>
                   </div>

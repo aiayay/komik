@@ -56,7 +56,10 @@
                             <h6 for="">Tanggal Lahir</h6>
                             <input type="date" class="form-control" name="tgl_lahir">
                         </li>
-                        <button type="submit" class="btn  btn-primary">Submit</button>
+                        <li>
+                          <br>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                        </li>
                       </ul>
                     </div>
                   </div>

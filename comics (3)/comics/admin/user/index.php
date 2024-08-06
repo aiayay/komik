@@ -8,7 +8,8 @@
                 <div class="col-lg-7">
                   <div class="header-text">
                     <h2 style="font-size: 36px">DATA USER</h2>
-                    <h6 style="padding-top: 18px"><a href="?page=user/tambah">Tambah Data User</a></h6>
+                      <h6 style="padding-top: 18px"><a href="?page=user/tambah" class="btn btn-success">Tambah Data User</a></h6>
+                      <br>
                     <table class="table table-striped custom-table" style="color: white;">
                               <thead>
                                     <tr>

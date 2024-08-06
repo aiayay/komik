@@ -44,7 +44,10 @@ $item = mysqli_fetch_array($search);
                             <h6 for="">Jumlah Komik</h6>
                             <input type="number" class="form-control" name="jumlah_komik" value="<?php echo $item ['jumlah_komik'];?>">
                         </li>
-                        <button type="submit" class="btn  btn-primary">Submit</button>
+                        <li>
+                          <br>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                        </li>
                       </ul>
                     </div>
                   </div>

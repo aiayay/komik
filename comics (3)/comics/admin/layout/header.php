@@ -49,7 +49,7 @@
                 <li><a href="?page=user/index">Data User</a></li>
                 <li><a href="?page=komik/index">Komik</a></li>
                 <li><a href="?page=paket/index">Paket</a></li>
-                <li><a href="?page=pesanan/index">Pembelian</a></li>
+                <li><a href="?page=pesanan/index">Pesanan</a></li>
                
                 <?php
 									 if (isset($_SESSION['id_user'])):
