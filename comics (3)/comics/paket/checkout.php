@@ -15,9 +15,8 @@
                         <form action="paket/proses_checkout.php" method="post" enctype="multipart/form-data">
                           <input type="hidden" name="id_paketsaya" value="<?=$_GET['id_paket']?>">
                           <div class="col-lg-12">
-                            <div class="item">
-                              <ul>
-                                <?php
+                    
+                            <?php
                                       if(!isset($_SESSION['id_user'])){
                                         echo "<script>
                                         alert('SILAHKAN LOGIN DULU');
@@ -27,26 +26,28 @@
                                           $user = mysqli_query($koneksi, "SELECT * FROM keranjang
                                                                   JOIN komik ON keranjang.id_komik=komik.id_komik
                                                                   JOIN paket ON keranjang.id_paket=paket.id_paket
+                                                                  JOIN user ON keranjang.id_user=user.id_user
                                                                   ORDER BY id_keranjang DESC");
 
                                            while ($item = mysqli_fetch_array($user)):
                                 ?>
-                                <li><img src="admin/assets/images/cover/<?= $item['cover']?>" alt="" width="100px" height="100px" class="templatemo-item" /></li>
-                                <li>
-                                  <h4><?= $item['judul']?></h4>
-                                  <span><?= $item['kuantitas']?></span>
-                                </li>
-                            
-                                <?php endwhile; ?>
-                              </ul>
-                  
+                            <div class="item row">
+                              <div class="col-2">
+                                <a href="?page=komik/detail_komik&id_komik=<?php echo $item['id_komik']; ?>">
+                                  <img class="img-fluid" src="admin/assets/images/cover/<?= $item['cover'] ?>" alt="" width="100px" height="100px">
+                                </a>
+                              </div>
+                              <div class="col-3">
+                              <a href="?page=komik/detail_komik&id_komik=<?php echo $item['id_komik'];?>"><h4><?= $item['judul']; ?><br /><span><?= $item['nama_lengkap']?></span></h4></a>
+                              </div>
                             </div>
+                            <?php endwhile; ?>
                             <br>
                               <ul>
                                   <li>
                                   <h4>Upload Bukti Bayar</h4>
                                   <br>
-                                  <input type="file" class="form-control" id="bukti_bayar" name="bukti_bayar">
+                                  <input type="file" class="form-control" id="bukti_bayar" name="bukti_bayar" required>
                                   </li>
                               </ul>
                           </div>

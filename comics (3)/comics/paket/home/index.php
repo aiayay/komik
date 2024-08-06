@@ -48,7 +48,7 @@
                           <div class="icon">
                             <a href="?page=admin/login/index"><img src="assets/images/service-01.jpg" alt="" style="max-width: 60px; border-radius: 50%" /></a>
                           </div>
-                          <h4><a href="?page=paket/pilih/index"><?= $data['nama_paket']?></a></h4>
+                          <h4><a href="?page=admin/login/index"><?= $data['nama_paket']?></a></h4>
                       <?php endif;?>
                           <p>Rp. <?= $data['harga']?></p>
                           <p><?= $data['deskripsi']?></p>

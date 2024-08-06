@@ -36,11 +36,7 @@ $batas_komik = $item['jumlah_komik'];
                                         <div class="item">
                                             
                                             <a href="?page=komik/detail_komik&id_komik=<?php echo $data['id_komik'];?>"><img class="img-fluid" src="admin/assets/images/cover/<?= $data['cover']?>" alt="" width="100px" height="100px"></a>
-                                            <h4><?= $data['judul']; ?><br /><span><?= $data['nama_lengkap']?></span></h4>
-                                            <ul>
-                                                <li><i class="fa fa-star"></i> 4.8</li>
-                                                <li><i class="fa fa-download"></i> 2.3M</li>
-                                            </ul>    
+                                            <h4><?= $data['judul']; ?><br /><span><?= $data['nama_lengkap']?></span></h4>   
                                             <div class="heading-section">
                                             <input type="checkbox" name="id_komik[]" value="<?php echo $data['id_komik']; ?>">
                                               <h4>Pilih</h4>

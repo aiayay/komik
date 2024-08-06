@@ -51,13 +51,25 @@
                                 </div>
                             </div>
                           <?php endwhile; ?>
-                          <div class="col-lg-12 d-flex justify-content-between">
-                        <div class="main-button">
-                          <a href="#">Back</a>
-                        </div>
-                        <div class="main-button">
-                          <a href="#">Next</a>
-                        </div>
+                          <?php
+                          $nextKomik = mysqli_query($koneksi, "SELECT * FROM komik JOIN user ON komik.id_user=user.id_user ORDER BY id_komik DESC LIMIT 4");
+                          $next = mysqli_fetch_array($nextKomik);
+                          
+                          // Ambil ID komik sebelumnya
+                          $prevKomik = mysqli_query($koneksi, "SELECT * FROM komik JOIN user ON komik.id_user=user.id_user ORDER BY id_komik DESC LIMIT 4");
+                          $back = mysqli_fetch_array($prevKomik);
+                          ?>
+                         <div class="col-lg-12 d-flex justify-content-between">
+                        <?php if ($back) : ?>
+                          <div class="main-button">
+                            <a href="../?page=komik/detail_komik">Back</a>
+                          </div>
+                        <?php endif; ?>
+                        <?php if ($next) : ?>
+                          <div class="main-button">
+                            <a href="../?page=komik/detail_komik">Next</a>
+                          </div>
+                        <?php endif; ?>
                       </div>
                   </div>
                 </div>
