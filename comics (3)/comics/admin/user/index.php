@@ -16,7 +16,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Username</th>
-                                        <th>Password</th>
+                                    
                                         <th>Nama Lengkap</th>
                                         <th>Email</th>
                                         <th>Tanggal Lahir</th>
@@ -36,7 +36,7 @@
                                     <tr>
                                         <td><?=  $no++; ?></td>
                                         <td><?= $item['username']; ?></td>
-                                        <td><?= $item['password']; ?></td>                                        
+                                                             
                                         <td><?= $item['nama_lengkap']?></td>
                                         <td><?= $item['email']?></td>
                                         <td><?= $item['tgl_lahir']?></td>
