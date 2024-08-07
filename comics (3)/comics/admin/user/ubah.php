@@ -19,7 +19,7 @@ $item = mysqli_fetch_array($search);
                 <div class="col-lg-12">
                   <div class="header-text">
                     <h2 style="font-size: 36px">DATA USER</h2>
-                    <h6 style="padding-top: 18px"><a href="?page=user/tambah">Tambah Data User</a></h6>
+                    <h6 style="padding-top: 18px"><a href="?page=user/tambah"></a></h6>
                     <form action="user/proses_ubah.php" method="post" enctype="multipart/form-data">
                       <input type="hidden" name="id_user" value="<?=$item['id_user']?>">
                       <div class="row">                  
@@ -27,16 +27,7 @@ $item = mysqli_fetch_array($search);
                       <div class="form-group">
                           <h6 for="">Username</h6>
                           <input type="text" class="form-control" name="username" placeholder=" Masukan Username" value="<?php echo $item ['username'];?>">
-                      </div>
-                      <div class="form-group">
-                          <h6 for="">Password</h6>
-                          <input type="text" class="form-control" name="password" placeholder=" Masukan Password" value="<?php echo $item ['password'];?>">
-                      </div>
-                      <div class="form-group">
-                          <h6 for="">Konfirmasi Password</h6>
-                          <input type="text" class="form-control" name="confirm_password" placeholder=" Masukan Password" value="<?php echo $item ['confirm_password'];?>">
-                      </div>
-                  
+                      </div>                 
                    
                       <div class="form-group">
                       <h6>

@@ -7,26 +7,25 @@
               <div class="row">
                 <div class="col-lg-7">
                   <div class="header-text">
-                    <h2 style="font-size: 36px">Sudah siapkah kamu berkelana menjelajahi kebudayaan Indonesia melalui visual yang menggemaskan?</h2>
+                    <h2 style="font-size: 27px">Sudah siapkah kamu berkelana menjelajahi kebudayaan Indonesia melalui visual yang menggemaskan?</h2>
                     <h6 style="padding-top: 18px">Mari nikmati keseruan koleksi komik kebudayaan EnchantIndo Comics. Sambil rebahan atau sedang di jalan? Semua bisa!</h6>
-                    <?php
+                   
+                  </div>
+                </div>
+                <br>
+                <div class="col-lg-5">
+                  <div class="header-text">
+                    <img src="assets/images/hero.jpeg" alt="" />
+                  </div><br>
+                </div>
+                <?php
 									      if (isset($_SESSION['id_user'])):
 								    ?>
-                    <!-- <div class="main-button">
-                      <a href="?page=admin/signup/index"></a>
-                    </div> -->
                     <?php else: ?>
                       <div class="main-button">
                       <a href="?page=admin/signup/index">Signup</a>
                     </div>
                     <?php endif;?>
-                  </div>
-                </div>
-                <div class="col-lg-5">
-                  <div class="header-text">
-                    <img src="assets/images/hero.jpeg" alt="" />
-                  </div>
-                </div>
               </div>
             </div>
             <!-- ***** Banner End ***** -->

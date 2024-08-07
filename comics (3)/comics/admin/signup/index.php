@@ -21,7 +21,7 @@
                                                 <hr>
                                                 <div class="main-buttona text-center">
                                                         <a href="?page=admin/login/index" class="logina">LOGIN</a>
-                                                        <a href="?page=signup/index" class="signupa">SIGNUP</a>
+                                                        <a href="#" class="signupa">SIGNUP</a>
                                                 </div>
                                             </div>
                                         </div>

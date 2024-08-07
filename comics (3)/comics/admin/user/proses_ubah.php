@@ -3,8 +3,6 @@ include '../koneksi.php';
 
 $id_user = $_POST['id_user'];
 $username = $_POST['username'];
-$password = $_POST ['password'];
-$confirm_password = $_POST ['confirm_password'];
 $nama_lengkap = $_POST ['nama_lengkap'];
 $jenis_kelamin= $_POST['jenis_kelamin'];
 $no_hp =$_POST['no_hp'];

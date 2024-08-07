@@ -38,7 +38,7 @@ if (isset($_SESSION['email'])){
                                                     <h4 class="mb-3 f-w-400 text-center">Login</h4>
                                                     <hr>  
                                                     <div class="main-buttona text-center">
-                                                        <a href="?page=login/index" class="login">LOGIN</a>
+                                                        <a href="#" class="login">LOGIN</a>
                                                         <a href="?page=admin/signup/index" class="signup">SIGNUP</a>
                                                     </div>
                                                 </div>
