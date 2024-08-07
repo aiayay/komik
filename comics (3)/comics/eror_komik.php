@@ -52,3 +52,27 @@ if (isset($_SESSION['email'])){
     </div>
 </div>
 <!-- [ auth-signin ] end -->
+
+
+
+
+
+<?php
+                // Tombol Next dan Previous untuk gambar dalam komik yang sama
+                $previous = mysqli_query($koneksi, "SELECT * FROM tbgambar WHERE id_komik='$getid' AND id_gambar < '$getid_gambar' ORDER BY id_gambar DESC LIMIT 1");
+                if ($prev_img = mysqli_fetch_array($previous)) { ?>
+                  <div class="main-button">
+                            <a href="?page=library/content&id_komik='.$getid.'&id_gambar='.$prev_img['id_gambar'].'">Back</a>
+                  </div>
+                    <!-- <a href="?page=library/content&id_komik='.$getid.'&id_gambar='.$prev_img['id_gambar'].'"><button type="button" class="btn btn-success">Previous</button></a> -->
+                    <?php } ?>
+
+                <?php
+                $next = mysqli_query($koneksi, "SELECT * FROM tbgambar WHERE id_komik='$getid' AND id_gambar > '$getid_gambar' ORDER BY id_gambar ASC LIMIT 1");
+                if ($next_img = mysqli_fetch_array($next)) {  ?>
+                
+                   <div class="main-button">
+                            <a href="?page=library/content&id_komik='.$getid.'&id_gambar='.$next_img['id_gambar'].'">Next</a>
+                  </div>
+                  <!-- <a href="?page=library/content&id_komik='.$getid.'&id_gambar='.$next_img['id_gambar'].'"><button type="button">Next</button></a> -->
+                  <?php } ?>

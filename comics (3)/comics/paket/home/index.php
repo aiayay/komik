@@ -41,7 +41,7 @@
                           if (isset($_SESSION['id_user'])):
                       ?> 
                           <div class="icon">
-                              <a href="?page=paket/index&id_paket=<?php echo $data["id_paket"];?>"><img src="assets/images/service-01.jpg" alt="" style="max-width: 60px; border-radius: 50%" /></a>
+                              <a href="?page=paket/index&id_paket=<?php echo $data["id_paket"];?>"><img src="assets/images/logo2.jpg" alt="" style="max-width: 60px; border-radius: 50%" /></a>
                           </div>
                           <h4><a href="?page=paket/index&id_paket=<?php echo $data["id_paket"];?>"><?= $data['nama_paket']?></a></h4>
                       <?php else: ?>
