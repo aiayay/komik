@@ -38,13 +38,6 @@ $id_user = $item['id_user'];
                                             <option value="konfirmasi" <?= $item['status'] == 'konfirmasi' ? 'selected' : '' ?>>Konformasi</option>
                                             <option value="ditolak" <?= $item['status'] == 'ditolak' ? 'selected' : '' ?>>Ditolak</option>
                                         </select>
-                        <!-- <li>
-                      
-                                                <h6 for="exampleInputPassword1">Foto</h6>
-                                                <input type="file" name="gambar_pesanan[]" id="gambar_pesanan" multiple>
-                                               
-                                    
-                        </li> -->
                         <li>
                           <br>
                           <button type="submit" class="btn btn-success">Submit</button>

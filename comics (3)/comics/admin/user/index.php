@@ -5,12 +5,13 @@
             <!-- ***** Banner Start ***** -->
             
               <div class="row">
-                <div class="col-lg-7">
+                <div class="col-lg-12">
                   <div class="header-text">
                     <h2 style="font-size: 36px">DATA USER</h2>
                       <h6 style="padding-top: 18px"><a href="?page=user/tambah" class="btn btn-success">Tambah Data User</a></h6>
                       <br>
-                    <table class="table table-striped custom-table" style="color: white;" width="100px">
+                      <div style="overflow-x: auto;">
+                    <table class="table table-striped custom-table" style="color: white;">
                               <thead>
                                     <tr>
                                         <th>No</th>
@@ -21,6 +22,7 @@
                                         <th>Tanggal Lahir</th>
                                         <th>Jenis Kelamin</th>
                                         <th>Nomor Handpone</th>
+                                        <th>Foto</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -40,7 +42,7 @@
                                         <td><?= $item['tgl_lahir']?></td>
                                         <td><?= $item['jenis_kelamin']?></td>
                                         <td><?= $item['no_hp']?></td>
-                                        <td><?= $item['foto']?></td>
+                                        <td><img src="assets/images/user/<?=$item ['foto']?>" width="100"></td>
                                         <td><a href="?page=user/ubah&id_user=<?php echo $item["id_user"];?>" class="btn btn-success">Ubah</a><br><br>
                                             <a onclick="return confirm('yakin mau dihapus??')" href="user/hapus.php?id_user=<?php echo $item["id_user"];?>" class="btn btn-danger">Hapus</a></td>
                                         </td>
@@ -48,6 +50,7 @@
                                     <?php } ?>
                                 </tbody>
                             </table>
+                      </div>
                   </div>
                 </div>
              

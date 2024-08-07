@@ -62,12 +62,12 @@
                          <div class="col-lg-12 d-flex justify-content-between">
                         <?php if ($back) : ?>
                           <div class="main-button">
-                            <a href="../?page=komik/detail_komik">Back</a>
+                            <a href="#">Back</a>
                           </div>
                         <?php endif; ?>
                         <?php if ($next) : ?>
                           <div class="main-button">
-                            <a href="../?page=komik/detail_komik">Next</a>
+                            <a href="#">Next</a>
                           </div>
                         <?php endif; ?>
                       </div>
