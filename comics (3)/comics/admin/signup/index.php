@@ -43,6 +43,10 @@
                                                 <p>Tanggal Lahir</p>
                                                 <input type="date" class="form-control" placeholder="Date of Birth" name="tgl_lahir" required>
                                             </div>
+                                            <div class="form-group mb-3">
+                                                <p for="">Foto</p>
+                                                <input type="file" class="form-control" name="foto">
+                                            </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group mb-3">
@@ -51,22 +55,23 @@
                                             </div>
                                             <div class="form-group mb-3">
                                                 <p>Konfirmasi Password</p>
-                                                <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" readonly>
+                                                <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <p>Nomor Telepon</p>
-                                                <input type="number" class="form-control" placeholder="No. Handphone" name="no_hp" readonly>
+                                                <input type="number" class="form-control" placeholder="No. Handphone" name="no_hp" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <p>Jenis Kelamin</p>
                                                 <h6 class="text-start"><input type="radio" name="jenis_kelamin" value="perempuan" required> Female</h6>
                                                 <h6 class="text-start"><input type="radio" name="jenis_kelamin" value="lakilaki" required> Male</h6>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-buttona text-center">
+                                            <div class="main-buttona text-center">
                                         <button type="submit" class="signupa">Signup</button>
                                     </div>
+                                        </div>
+                                    </div>
+                                   
                                 </form>
                             </div>
                         </div>

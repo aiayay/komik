@@ -200,6 +200,11 @@ body {
   /* background-image: url(../images/Picture1.jpg); */
   font-family: "Poppins", sans-serif;
 }
+table {
+  border-collapse: collapse;
+  word-wrap: break-word;
+  max-width: 200px;
+}
 
 body .page-content {
   margin-top: 110px;

@@ -10,7 +10,7 @@
                     <h2 style="font-size: 36px">DATA USER</h2>
                       <h6 style="padding-top: 18px"><a href="?page=user/tambah" class="btn btn-success">Tambah Data User</a></h6>
                       <br>
-                    <table class="table table-striped custom-table" style="color: white;">
+                    <table class="table table-striped custom-table" style="color: white;" width="100px">
                               <thead>
                                     <tr>
                                         <th>No</th>

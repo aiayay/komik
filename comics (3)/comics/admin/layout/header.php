@@ -55,7 +55,7 @@
 									 if (isset($_SESSION['id_user'])):
 								?> 
                 <li>
-                  <a href="login/logout.php">Logout<img src="../assets/images/profile-header.jpg" alt="" /></a>
+                  <a href="login/logout.php">Logout<img src="assets/images/user/<?= $_SESSION['foto'] ?>" alt="User-Profile-Image"></a>
                 </li>
                 <?php else: ?>
                   <li>

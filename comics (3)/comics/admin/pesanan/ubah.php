@@ -19,12 +19,17 @@ $id_user = $item['id_user'];
               <div class="row">
                 <div class="col-lg-12">
                   <div class="header-text">
-                    <h2 style="font-size: 36px">Detail Pesanan</h2>
-                    <h6 style="padding-top: 18px"><a href="?page=pesanan/index">Kembali</a></h6>
+                    <h2 style="font-size: 36px">Bukti Bayar</h2>
+                    <h6 style="padding-top: 18px"><a href="?page=pesanan/index"></a></h6>
                     <form action="pesanan/proses_ubah.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id_pesanan" value="<?=$item['id_pesanan']?>">
-                    <div class="row col-lg-12">                  
+                  <div class="row">                  
                     <div class="col-lg-15 align-self-center">
+                    <div class="col-lg-3 col-sm-6">
+                                        <div class="item text-center">
+                                        <img class="img-fluid" src="assets/images/bukti_bayar/<?=$item ['bukti_bayar']?>" alt="" width="100%" height="auto">
+                                        </div>
+                    </div>
                     <ul>
                     <h6 for="">Status Pesanan</h6>
                                         <select name="status" id="">
@@ -33,26 +38,28 @@ $id_user = $item['id_user'];
                                             <option value="konfirmasi" <?= $item['status'] == 'konfirmasi' ? 'selected' : '' ?>>Konformasi</option>
                                             <option value="ditolak" <?= $item['status'] == 'ditolak' ? 'selected' : '' ?>>Ditolak</option>
                                         </select>
+                        <!-- <li>
+                      
+                                                <h6 for="exampleInputPassword1">Foto</h6>
+                                                <input type="file" name="gambar_pesanan[]" id="gambar_pesanan" multiple>
+                                               
+                                    
+                        </li> -->
                         <li>
                           <br>
                           <button type="submit" class="btn btn-success">Submit</button>
                         </li>
-                      </ul>                    
-                     </div>
-                  </div>
-                </form>
-                <ul>
-                        <li>
-                        <td><img src="assets/images/bukti_bayar/<?=$item ['bukti_bayar']?>" width="50px" height="250px"></td>
-                        </li>
                       </ul>
-                <table class="table table-striped custom-table" style="color: white;">
+                      <br>
+                      
+                  <table class="table table-striped custom-table" style="color: white;">
                               <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Judul</th>
+                                        <th>Deskripsi</th>
                                         <th>Cover Komik</th>
-                                        <th>Jenis Paket</th>
+                                        <th>Nama Paket</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -74,13 +81,17 @@ $id_user = $item['id_user'];
                                     <tr>
                                         <td><?=  $no++; ?></td>
                                         <td><?= $data['judul']; ?></td>
-                                        
-                                        <td><img src="assets/images/cover/<?=$data ['cover']?>" width="100px" height="100px"></td>                                 
-                                        <td><?= $data['nama_paket']; ?></td> 
+                                        <td><?= $data['deskripsi']; ?></td> 
+                                        <td><img src="assets/images/cover/<?=$data ['cover']?>" width="100"></td>   
+                                        <td><?= $data['nama_paket']; ?></td>                              
                                     </tr>
                                     <?php } ?>
                                 </tbody>
-                  </table>
+                    </table>
+                    
+                    </div>
+                  </div>
+                </form>
                   </div>
                 </div>
              
@@ -91,5 +102,7 @@ $id_user = $item['id_user'];
       </div>
     </div>
 
+    
+   
     
    

@@ -51,7 +51,7 @@
 								?>
                 <li><a href="?page=library/index">My Library</a></li>
                 <li>
-                  <a href="logout.php">Logout<img src="assets/images/profile-header.jpg" alt="" /></a>
+                  <a href="logout.php">Logout<img src="assets/images/user/<?= $_SESSION['foto'] ?>" alt="User-Profile-Image"></a>
                 </li>
                 <?php else: ?>
                   <li><a href="?page=admin/login/index">My Library</a></li>
