@@ -40,6 +40,7 @@
                                         <td><?= $item['tgl_lahir']?></td>
                                         <td><?= $item['jenis_kelamin']?></td>
                                         <td><?= $item['no_hp']?></td>
+                                        <td><?= $item['foto']?></td>
                                         <td><a href="?page=user/ubah&id_user=<?php echo $item["id_user"];?>" class="btn btn-success">Ubah</a><br><br>
                                             <a onclick="return confirm('yakin mau dihapus??')" href="user/hapus.php?id_user=<?php echo $item["id_user"];?>" class="btn btn-danger">Hapus</a></td>
                                         </td>
