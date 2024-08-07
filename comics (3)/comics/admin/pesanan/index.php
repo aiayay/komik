@@ -7,13 +7,13 @@
             <div class="header-text">
               <h2 style="font-size: 36px">DATA PESANAN</h2>
               
-                <!-- <form method="GET" action="">
-                  <label for="tanggal_dari">Dari Tanggal:</label>
-                  <input type="date" id="tanggal_dari" name="tanggal_dari">
-                  <label for="tanggal_sampai">Sampai Tanggal:</label>
-                  <input type="date" id="tanggal_sampai" name="tanggal_sampai"><br>
-                  <input type="submit" value="Filter" name="filter">
-                </form> -->
+                <form method="post" action="">
+                  <h6 for="tanggal_dari">Dari Tanggal:</h6>
+                    <input type="date" id="tanggal_dari" name="tanggal_dari">
+                  <h6 for="tanggal_sampai">Sampai Tanggal:</h6>
+                    <input type="date" id="tanggal_sampai" name="tanggal_sampai"><br>
+                    <input type="submit" value="Filter" name="filter">
+                </form>
               <form method="POST" action="pesanan/cetak_laporan.php" target="_blank">
                 <input type="hidden" name="tanggal_dari" value="<?php echo $_GET['tanggal_dari'] ?? ''; ?>">
                 <input type="hidden" name="tanggal_sampai" value="<?php echo $_GET['tanggal_sampai'] ?? ''; ?>">
@@ -40,13 +40,15 @@
                   include 'koneksi.php'; // Menyertakan file koneksi database
 
                   $no = 1;
-                  if(isset($_GET['filter'])) {
-                    $_SESSION['tanggal_dari'] = $_GET['tanggal_dari'];
-                    $_SESSION['tanggal_sampai'] = $_GET['tanggal_sampai'];
-                    $tanggal_dari = $_SESSION['tanggal_dari'];
-                    $tanggal_sampai = $_SESSION['tanggal_sampai'];
+                  if(isset($_POST['filter'])) {
+                    $tanggal_dari = mysqli_real_escape_string($koneksi, $_POST['tanggal_dari']);
+                    $tanggal_sampai = mysqli_real_escape_string($koneksi, $_POST['tanggal_sampai']);
+                    // $_SESSION['tanggal_dari'] = $_GET['tanggal_dari'];
+                    // $_SESSION['tanggal_sampai'] = $_GET['tanggal_sampai'];
+                    // $tanggal_dari = $_SESSION['tanggal_dari'];
+                    // $tanggal_sampai = $_SESSION['tanggal_sampai'];
 
-                    $query = "SELECT * FROM pesanan JOIN user ON pesanan.id_user=user.id_user ORDER BY id_pesanan DESC";
+                    $query = "SELECT * FROM pesanan JOIN user ON pesanan.id_user=user.id_user WHERE tgl_pesanan BETWEEN '$tanggal_dari' and '$tanggal_sampai'  ORDER BY id_pesanan DESC";
 
                     // $query = "
                     //   SELECT pesanan.*, user.nama_lengkap, paket.nama_paket, user.id_user
