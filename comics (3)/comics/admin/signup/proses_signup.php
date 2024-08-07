@@ -12,7 +12,8 @@ $tgl_lahir =$_POST['tgl_lahir'];
 $level='member';
 
 
-
+$password = password_hash($password, PASSWORD_DEFAULT);
+$confirm_password = password_hash($confirm_password, PASSWORD_DEFAULT);
 // cek apakah data yang diinputkan sudah sesuai database
 $tambah = mysqli_query($koneksi, "INSERT INTO user (username, password, confirm_password, nama_lengkap, jenis_kelamin, no_hp, email, tgl_lahir, level) 
 VALUES ('$username', '$password', '$confirm_password','$nama_lengkap', '$jenis_kelamin','$no_hp','$email','$tgl_lahir','$level')");

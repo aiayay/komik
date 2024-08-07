@@ -13,6 +13,7 @@ $level =$_POST['level'];
 
 
 $password = password_hash($password, PASSWORD_DEFAULT);
+$confirm_password = password_hash($confirm_password, PASSWORD_DEFAULT);
 
 $tambah = mysqli_query($koneksi, "INSERT INTO user (username, password, confirm_password, nama_lengkap, jenis_kelamin, no_hp, email, tgl_lahir, level) 
 VALUES ('$username', '$password', '$confirm_password','$nama_lengkap', '$jenis_kelamin','$no_hp','$email','$tgl_lahir','$level')");
