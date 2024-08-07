@@ -42,6 +42,7 @@
                   <div class="row">
                             <?php
                             $perpage = 3;
+                            // $jumlahdata =count(query("SELECT * FROM komik"));
                             $page = isset($_GET["page"]) ? (int)$_GET["page"]: 1;
                             $start = ($page > 1) ? ($page * $perpage) - $perpage : 0;
                                $komik = mysqli_query($koneksi, "SELECT * FROM komik JOIN user ON komik.id_user=user.id_user ORDER BY id_komik DESC LIMIT 4");

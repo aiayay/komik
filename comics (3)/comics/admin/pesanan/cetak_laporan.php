@@ -45,7 +45,7 @@ $tanggal_sampai = isset($_SESSION['tanggal_sampai']) ? $_SESSION['tanggal_sampai
 </head>
 <body>
     <center>
-        <img id="logo" src="../asset/images/logo2.jpg" alt="Logo" align="left">
+        <img id="logo" src="../assets/images/logo2.jpg" alt="Logo" align="left">
         <h2 id="title" align="center">EnchatIndo Comics</h2>
         <h5>Universitas Andalas</h5>
         <h5>Telp : (0751) 72001 / (0751) 71378 | Email : @yahoo.co.id</h5>
