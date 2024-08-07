@@ -3,12 +3,12 @@
 session_start();
 // //jika sudah login
 
-// if(!isset($_SESSION['id_user'])){
-// echo "<script>
-// alert('Harap login terlebih dahulu')
-// window.location.href='login/index.php'
-// </script>";
-// }
+if(!isset($_SESSION['id_user'])){
+echo "<script>
+alert('Harap login terlebih dahulu')
+window.location.href='../?page=home/index'
+</script>";
+}
 
 
 include "koneksi.php";

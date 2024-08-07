@@ -12,6 +12,7 @@ $email=$_POST['email'];
 $tgl_lahir =$_POST['tgl_lahir'];
 $level =$_POST['level'];
 
+$password = password_hash($password, PASSWORD_DEFAULT);
 
 $update = mysqli_query($koneksi, "UPDATE user SET username='$username', password='$password', confirm_password='$confirm_password', nama_lengkap='$nama_lengkap', jenis_kelamin='$jenis_kelamin',
 no_hp='$no_hp',email='$email',tgl_lahir='$tgl_lahir',level='$level' WHERE id_user='$id_user'"); 

@@ -8,7 +8,7 @@
                 <div class="col-lg-12">
                   <div class="header-text">
                     <h2 style="font-size: 36px">DATA PAKET</h2>
-                    <h6 style="padding-top: 18px"><a href="?page=paket/tambah">Tambah Data Paket</a></h6>
+                    <h6 style="padding-top: 18px"><a href="?page=paket/index">Kembali</a></h6>
                     <form action="paket/proses_tambah.php" method="post" enctype="multipart/form-data">
                   <div class="row">                  
                     <div class="col-lg-15 align-self-center">

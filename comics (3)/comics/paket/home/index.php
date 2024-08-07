@@ -32,7 +32,7 @@
                 <div class="row">
                 <a href="?page=komik/home/index">
                 <?php
-                               $paket = mysqli_query($koneksi, "SELECT * FROM paket ORDER BY id_paket DESC");
+                               $paket = mysqli_query($koneksi, "SELECT * FROM paket ORDER BY id_paket ASC");
                                 while($data= mysqli_fetch_array($paket)):
                             ?>
                   <div class="col-lg-3">

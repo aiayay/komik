@@ -20,61 +20,6 @@ if (!$getid_gambar) {
 }
 ?>
 
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-    <div class="most-popular">
-                <div class="row">
-                  <div class="col-lg-12 col-sm-12">
-                    <div class="item">
-                      <img class="img-fluid" src="admin/assets/images/komik/<?= $img['gambar_komik']?>" alt="" width="50%" height="auto">
-                    </div>
-                  </div>
-                </div>
-
-              
-              </div>
-      <div class="page-content">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="header-text">
-              <h2 style="font-size: 36px"></h2>
-              <p><?= $item['deskripsi']; ?></p>
-           
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-                    <!-- <div class="col-lg-12 d-flex justify-content-between">
-                        <?php if ($back) : ?>
-                          <div class="main-button">
-                            <a href="?page=komik/detail_komik&id_komik=<?= $back['id_komik']; ?>">Back</a>
-                          </div>
-                        <?php endif; ?>
-                        <?php if ($next) : ?>
-                          <div class="main-button">
-                            <a href="?page=komik/detail_komik&id_komik=<?= $next['id_komik']; ?>">Next</a>
-                          </div>
-                        <?php endif; ?>
-                      </div> -->
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
   <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -89,11 +34,38 @@ if (!$getid_gambar) {
                   </div>
                 </div>
                                     <div class="col-lg-12 col-sm-12">
-                                        <div class="item">
+                                        <div class="item text-center">
                                             
                                         <img class="img-fluid" src="admin/assets/images/komik/<?= $img['gambar_komik']?>" alt="" width="100%" height="auto">
                                         </div>
                                     </div>
+                        
+
+                                                      <div class="col-lg-12 d-flex justify-content-between">
+                                                      <?php
+                                                          $previous = mysqli_query($koneksi, "SELECT * FROM tbgambar WHERE id_komik='$getid' AND id_gambar < '$getid_gambar' ORDER BY id_gambar DESC LIMIT 1");
+                                                          if ($prev_img = mysqli_fetch_array($previous)) {
+                                                              $prev_url = "?page=library/content&id_komik={$getid}&id_gambar={$prev_img['id_gambar']}";
+                                                              ?>
+                                                              
+                                            <div class="main-button">
+                                              <a href="<?php echo $prev_url; ?>">Back</a>
+                                            </div>
+
+                                            <?php
+                                                          }
+                                                          $next = mysqli_query($koneksi, "SELECT * FROM tbgambar WHERE id_komik='$getid' AND id_gambar > '$getid_gambar' ORDER BY id_gambar ASC LIMIT 1");
+                                                          if ($next_img = mysqli_fetch_array($next)) {
+                                                              $next_url = "?page=library/content&id_komik={$getid}&id_gambar={$next_img['id_gambar']}";
+                                                              ?>
+                                            <div class="main-button">
+                                              <a href="<?php echo $next_url; ?>">Next</a>
+                                            </div>
+                                            <?php
+                                                          }
+                                                      ?>
+                                        </div>
+
               </div>
             </div>
             <!-- ***** Banner End ***** -->

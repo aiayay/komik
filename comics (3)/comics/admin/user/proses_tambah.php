@@ -11,6 +11,9 @@ $email=$_POST['email'];
 $tgl_lahir =$_POST['tgl_lahir'];
 $level =$_POST['level'];
 
+
+$password = password_hash($password, PASSWORD_DEFAULT);
+
 $tambah = mysqli_query($koneksi, "INSERT INTO user (username, password, confirm_password, nama_lengkap, jenis_kelamin, no_hp, email, tgl_lahir, level) 
 VALUES ('$username', '$password', '$confirm_password','$nama_lengkap', '$jenis_kelamin','$no_hp','$email','$tgl_lahir','$level')");
 
