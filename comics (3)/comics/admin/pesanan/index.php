@@ -8,11 +8,15 @@
               <h2 style="font-size: 36px">DATA PESANAN</h2>
               
                 <form method="post" action="">
-                  <h6 for="tanggal_dari">Dari Tanggal:</h6>
-                    <input type="date" id="tanggal_dari" name="tanggal_dari">
-                  <h6 for="tanggal_sampai">Sampai Tanggal:</h6>
-                    <input type="date" id="tanggal_sampai" name="tanggal_sampai"><br>
-                    <input type="submit" value="Filter" name="filter">
+                  <table>
+                    <tr>
+                      <td><h6 for="tanggal_dari">Dari Tanggal:</h6></td>
+                      <td> <input type="date" id="tanggal_dari" name="tanggal_dari"></td>
+                      <td><h6 for="tanggal_sampai">Sampai Tanggal:</h6></td>
+                      <td><input type="date" id="tanggal_sampai" name="tanggal_sampai"><br></td>
+                      <td><input type="submit" value="Filter" name="filter" class="btn btn-success"></td>
+                    </tr>
+                  </table>
                 </form>
               <form method="POST" action="pesanan/cetak_laporan.php" target="_blank">
                 <input type="hidden" name="tanggal_dari" value="<?php echo $_GET['tanggal_dari'] ?? ''; ?>">
