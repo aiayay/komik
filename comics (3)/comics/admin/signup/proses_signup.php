@@ -25,16 +25,16 @@ $confirm_password = password_hash($confirm_password, PASSWORD_DEFAULT);
 $tambah = mysqli_query($koneksi, "INSERT INTO user (username, password, confirm_password, nama_lengkap, jenis_kelamin, no_hp, email, tgl_lahir, level,foto) 
 VALUES ('$username', '$password', '$confirm_password','$nama_lengkap', '$jenis_kelamin','$no_hp','$email','$tgl_lahir','$level','$namafile')");
 
-// if ($tambah){
-//     echo "<script>
-//     alert ('data berhasil ditambahkan')
-//     window.location.href='../?page=user/index'
-//     </script>";
-//    }   else {
-//         echo "<script>
-//         alert ('data gagal ditambahkan')
-//         window.location.href='../?page=user/tambah'
-//         </script>";
-//     }
+if ($tambah){
+    echo "<script>
+    alert ('data berhasil ditambahkan')
+    window.location.href='../../?page=home/index'
+    </script>";
+   }   else {
+        echo "<script>
+        alert ('data gagal ditambahkan')
+        window.location.href='../?page=user/tambah'
+        </script>";
+    }
 
 ?>

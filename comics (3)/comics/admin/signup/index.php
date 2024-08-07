@@ -13,7 +13,7 @@
                     <div class="auth-wrapper">
                         <div class="auth-content text-center">
                             <div class="card borderless">
-                                <form action="admin/signup/proses_signup.php" method="post">
+                                <form action="admin/signup/proses_signup.php" method="post" enctype="multipart/form-data">
                                     <div class="row align-items-center">
                                         <div class="col-md-12">
                                             <div class="card-body">
