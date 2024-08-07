@@ -18,6 +18,7 @@
                     <img src="assets/images/hero.jpeg" alt="" />
                   </div><br>
                 </div>
+
               </div>
             </div>
             <!-- ***** Banner End ***** -->
@@ -27,7 +28,7 @@
               <div class="row">
                 <div class="col-lg-12">
                   <div class="heading-section">
-                    <h4><em>Komik</em> Pilihan</h4>
+                    <h4><em>Komik</em> Terbaru</h4>
                   </div>
                   <div class="row">
                             <?php
@@ -72,3 +73,36 @@
     </div>
 
     
+            <!-- ***** Gaming Library Start ***** -->
+       <div class="gaming-library profile-library">
+    <div class="container">
+      <div class="col-lg-12">
+        <div class="heading-section">
+          <h4><em>Koleksi</em> Pilihan</h4>
+        </div>
+        <div class="item row">
+          <?php
+          $komik = mysqli_query($koneksi, "SELECT * FROM komik JOIN user ON komik.id_user=user.id_user ORDER BY id_komik DESC");
+          while ($data = mysqli_fetch_array($komik)) :
+          ?>
+          <div class="col-md-4 mb-4"> <!-- Kelas mb-4 untuk margin bawah -->
+            <a href="?page=komik/detail_komik&id_komik=<?php echo $data['id_komik']; ?>">
+              <img class="img-fluid mb-2 w-75" src="admin/assets/images/cover/<?= $data['cover'] ?>" alt="" width="100%" height="10%">
+              </a><br><br>
+             <a href="?page=komik/detail_komik&id_komik=<?php echo $data['id_komik'];?>">
+                <h4><?= $data['judul']; ?><br>
+                <p><?= $data['nama_lengkap']?></p>
+                </h4>
+                <p><?= substr($data['deskripsi'], 0, 50); ?>...</p>
+              </a>
+              <br>
+              
+           
+          </div>
+          <?php endwhile; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

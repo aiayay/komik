@@ -47,13 +47,11 @@ $data = mysqli_fetch_array($search);
                                 ?>
                             
                             <div class="item row">
-                              <div class="col-2">
-                                <a href="?page=komik/detail_komik&id_komik=<?php echo $item['id_komik']; ?>">
+                              <div class="col-lg-2">
                                   <img class="img-fluid" src="admin/assets/images/cover/<?= $item['cover'] ?>" alt="" width="100px" height="100px">
-                                </a>
                               </div>
-                              <div class="col-3">
-                              <a href="?page=komik/detail_komik&id_komik=<?php echo $item['id_komik'];?>"><h4><?= $item['judul']; ?><br /><span><?= $item['nama_lengkap']?></span></h4></a>
+                              <div class="col-lg-6">
+                              <p><?= $item['judul']; ?></p>
                               </div>
                             </div>
                             <?php endwhile; ?>

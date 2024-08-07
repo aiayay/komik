@@ -912,9 +912,8 @@ Most Popular Style
 .most-popular {
   margin-top: 60px;
   padding: 30px;
-  /* background-color: #1f2122; */
+  background-color: #1f2122;
   border-radius: 23px;
-  background-image: url(../images/banner-bg.jpg);
 }
 
 .most-popular .item {
@@ -982,10 +981,8 @@ Gaming Library Style
 .gaming-library {
   margin-top: 60px;
   padding: 30px;
-  /* background-color: #A08A7B; */
+  background-color: #1f2122;
   border-radius: 23px;
-  background-image: url(../images/banner-bg.jpg);
-  /* opacity: 0.5; */
 }
 
 .gaming-library .item {
