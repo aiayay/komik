@@ -7,7 +7,7 @@
               <div class="row">
                 <div class="col-lg-7">
                   <div class="header-text">
-                    <h2 style="font-size: 27px">Sudah siapkah kamu berkelana menjelajahi kebudayaan Indonesia melalui visual yang menggemaskan?</h2>
+                    <h2 style="font-size: 25px">Sudah siapkah kamu berkelana menjelajahi kebudayaan Indonesia melalui visual yang menggemaskan?</h2>
                     <h6 style="padding-top: 18px">Mari nikmati keseruan koleksi komik kebudayaan EnchantIndo Comics. Sambil rebahan atau sedang di jalan? Semua bisa!</h6>
                    
                   </div>

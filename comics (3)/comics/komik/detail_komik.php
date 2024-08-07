@@ -15,34 +15,39 @@ $back = mysqli_fetch_array($prevKomik);
 ?>
 
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="page-content">
-        <!-- ***** Banner Start ***** -->
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="main-profile">
-              <div class="row">
-                <div class="col-lg-4">
-                  <!-- <img src="assets/images/profile.jpg" alt="" style="border-radius: 23px" /> -->
-                </div>
-                <div class="col-lg-10 align-self-center">
-                  <div class="main-info header-text">
-                    <h4>Koleksi Terbaru</h4>
-                    <p>Sudah siapkah kamu berkelana menjelajahi kebudayaan Indonesia melalui visual yang menggemaskan? Mari nikmati keseruan koleksi komik kebudayaan EnchantIndo Comics, di mana dan kapan pun!</p>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-content">
+            <!-- ***** Banner Start ***** -->
+            <div class="main-banner">
+            <div class="row">
+                <div class="col-lg-7">
+                  <div class="header-text">
+                    <h2 style="font-size: 25px">Sudah siapkah kamu berkelana menjelajahi kebudayaan Indonesia melalui visual yang menggemaskan?</h2>
+                    <h6 style="padding-top: 18px">Mari nikmati keseruan koleksi komik kebudayaan EnchantIndo Comics. Sambil rebahan atau sedang di jalan? Semua bisa!</h6>
+                   
                   </div>
                 </div>
+                <br>
+                <div class="col-lg-5">
+                  <div class="header-text">
+                    <img src="assets/images/hero.jpeg" alt="" />
+                  </div><br>
+                </div>
               </div>
+            </div>
+            <!-- ***** Banner End ***** -->
+
+            <!-- ***** Most Popular Start ***** -->
+            <div class="most-popular">
               <div class="row">
                 <div class="col-lg-12">
-                  <div class="clips">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="heading-section">
-                          <h4><?= $item['judul']; ?><br /></h4>
-                        </div>
-                      </div>
-                      <div class="col-lg-12">
+                  <div class="heading-section">
+                      <h4 class="text-center"><?= $item['judul']; ?><br /></h4>
+                  </div>
+                  <div class="row">
+                    
+                  <div class="col-lg-12">
                         <div class="item d-flex border p-3">
                           <div class="col-lg-3 col-sm-6">
                             <a href="?page=komik/detail_komik&id_komik=<?php echo $item['id_komik']; ?>">
@@ -66,15 +71,14 @@ $back = mysqli_fetch_array($prevKomik);
                           </div>
                         <?php endif; ?>
                       </div>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- ***** Most Popular End ***** -->
           </div>
         </div>
-        <!-- ***** Banner End ***** -->
       </div>
     </div>
-  </div>
-</div>
+
+    
