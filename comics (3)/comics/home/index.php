@@ -72,7 +72,7 @@
                           <?php endwhile; ?>
                               <div class="col-lg-12">
                                 <div class="main-button">
-                                  <a href="?page=komik/home/index">Discover Comics</a>
+                                  <a href="?page=komik/index">Discover Comics</a>
                                 </div>
                               </div>
                   </div>

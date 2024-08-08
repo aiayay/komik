@@ -23,8 +23,7 @@ $id_user = $_SESSION['id_user'];
                             <div class="main-info header-text">
                            
                               <h4>Daftar Komik Saya</h4>
-                              <p>Sudah siapkah kamu berkelana menjelajahi kebudayaan Indonesia melalui visual yang menggemaskan?
-                              Mari nikmati keseruan koleksi komik kebudayaan EnchantIndo Comics, di mana dan kapan pun!</p>
+                              <a href="?page=library/bukti_bayar"><p>Riwayat Komik</p></a>
                           
                            </div>
                         </div>

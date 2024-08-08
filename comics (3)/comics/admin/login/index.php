@@ -57,7 +57,7 @@ if (isset($_SESSION['email'])){
                                             <button type="submit" class="signupa">Login</button>
                                         </div>
                                         <br>
-                                        <p class="text-center">Forgot Password? <a href="?page=signup/index">Reset</a></p>
+                                        <p class="text-center">Forgot Password? <a href="#">Reset</a></p>
                                         <p class="text-center">Not a Member? <a href="?page=admin/signup/index">Signup Now</a></p>
                                         
                                     </form>
