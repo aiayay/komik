@@ -23,12 +23,14 @@ $id_user = $_SESSION['id_user'];
                             <div class="main-info header-text">
                            
                               <h4>Daftar Komik Saya</h4>
-                              <a href="?page=library/bukti_bayar"><p>Riwayat Komik</p></a>
+                              <p>Sudah siapkah kamu berkelana menjelajahi kebudayaan Indonesia melalui visual yang menggemaskan?
+                              Mari nikmati keseruan koleksi komik kebudayaan EnchantIndo Comics, di mana dan kapan pun!</p>
                           
                            </div>
                         </div>
                        
                     </div>
+
             <!-- ***** Most Popular Start ***** -->
             <div class="most-popular">
               <div class="row">
