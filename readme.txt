@@ -1,8 +1,8 @@
 admin
-email : aini@gmail.com
-pass : aini
+email : admin@gmail.com
+pass : admin
 
 
 member
-email : aini13@gmail.com
-pass : aini
+email : member1@gmail.com
+pass : member
