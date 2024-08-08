@@ -16,10 +16,7 @@ $namaSementara = $_FILES['foto']['tmp_name'];
 
 $terupload = move_uploaded_file($namaSementara, '../assets/images/user/' . $namafile);
 
-$password = password_hash($password, PASSWORD_DEFAULT);
-$confirm_password = password_hash($confirm_password, PASSWORD_DEFAULT);
-
-$update = mysqli_query($koneksi, "UPDATE user SET username='$username', password='$password', confirm_password='$confirm_password', nama_lengkap='$nama_lengkap', jenis_kelamin='$jenis_kelamin',
+$update = mysqli_query($koneksi, "UPDATE user SET username='$username', nama_lengkap='$nama_lengkap', jenis_kelamin='$jenis_kelamin',
 no_hp='$no_hp',email='$email',tgl_lahir='$tgl_lahir',level='$level',foto='$namafile' WHERE id_user='$id_user'"); 
 if ($update){
     echo "<script>

@@ -19,7 +19,8 @@
                         </li>
                         <li>
                             <h6 for="">Deskripsi</h6>
-                            <input type="text" class="form-control" name="deskripsi" placeholder=" Masukan Deskripsi">
+                            <textarea name="deskripsi" id="" id="editor" cols="3" rows="13" class="form-control" required></textarea>
+                            <!-- <input type="text" class="form-control" name="deskripsi" placeholder=" Masukan Deskripsi"> -->
                         </li>
                         <li>
                             <h6 for="exampleInputPassword1">Cover</h6>

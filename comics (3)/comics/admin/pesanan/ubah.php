@@ -36,7 +36,7 @@ $id_user = $item['id_user'];
                                             <option value="pending" <?= $item['status'] == 'pending' ? 'selected' : '' ?>>Pending</option>
                                             <option value="diterima" <?= $item['status'] == 'diterima' ? 'selected' : '' ?>>Diterima</option>
                                             <option value="konfirmasi" <?= $item['status'] == 'konfirmasi' ? 'selected' : '' ?>>Konformasi</option>
-                                            <option value="ditolak" <?= $item['status'] == 'ditolak' ? 'selected' : '' ?>>Ditolak</option>
+                                            <option value="expired" <?= $item['status'] == 'expired' ? 'selected' : '' ?>>Expired</option>
                                         </select>
                         <li>
                           <br>

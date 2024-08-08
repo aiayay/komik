@@ -23,29 +23,30 @@ $item = mysqli_fetch_array($search);
                     <form action="komik/proses_ubah.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id_komik" value="<?=$item['id_komik']?>">
                   <div class="row">                  
-                    <div class="col-lg-15 align-self-center">
-                    <ul>
-                        <li>
-                            <h6 for="">Judul</h6>
-                            <input type="text" class="form-control" name="judul" placeholder=" Masukan Judul" value="<?php echo $item ['judul'];?>">
-                        </li>
-                        <li>
-                            <h6 for="">Deskripsi</h6>
-                            <input type="text" class="form-control" name="deskripsi" placeholder=" Masukan Deskripsi" value="<?php echo $item ['deskripsi'];?>">
-                        </li>
-                        <li>
-                            <h6 for="exampleInputPassword1">Cover</h6>
-                            <img src="assets/images/cover/<?=$item ['cover']?>" width="100px">
+                    <div class="col-lg-15 col-md-6 align-self-center">
+                    <div class="form-group">
+                   
+                        
+                          <img src="assets/images/cover/<?=$item ['cover']?>" width="100px" height="400px">
                             <input type="hidden" name="foto_lama" value="<?= $item['cover']?>">
                             <input type="file" class="form-control" name="cover">
-                        </li>
-                        <li>
-                          <br>
+                      </div>
+                      </div>
+                      <div class="col-lg-15 col-md-6 align-self-center">
+                      <div class="form-group">
+                            <h6 for="">Judul</h6>
+                            <input type="text" class="form-control" name="judul" placeholder=" Masukan Judul" value="<?php echo $item ['judul'];?>">
+                        </div>
+                        <div class="form-group">
+                            <h6 for="">Deskripsi</h6>
+                            <textarea name="deskripsi" id="editor" cols="3" rows="13" class="form-control" required><?php echo $item['deskripsi']; ?></textarea>
+                        </div>
+                       
+                  
+                  
+                     
                           <button type="submit" class="btn btn-success">Submit</button>
-                        </li>
-                             
-                          
-                      </ul>
+                      
                     </div>
                   </div>
                 </form>

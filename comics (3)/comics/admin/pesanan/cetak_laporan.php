@@ -48,7 +48,7 @@ $tanggal_sampai = isset($_SESSION['tanggal_sampai']) ? $_SESSION['tanggal_sampai
         <img id="logo" src="../assets/images/logo2.jpg" alt="Logo" align="left">
         <h2 id="title" align="center">EnchatIndo Comics</h2>
         <h5>Universitas Andalas</h5>
-        <h5>Telp : (0751) 72001 / (0751) 71378 | Email : @yahoo.co.id</h5>
+        <h5>Telp : +6283829666466 | Email : enchantindocomics@gmail.com</h5>
         <h2>Laporan Pesanan</h2>
         <h5>PERIODE : <?php echo date('d/m/Y', strtotime($tanggal_dari)); ?> s/d <?php echo date('d/m/Y', strtotime($tanggal_sampai)); ?></h5>
       
