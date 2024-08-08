@@ -25,7 +25,7 @@ if (!$getid_gambar) {
       <div class="page-content">
         <!-- ***** Banner Start ***** -->
         <div class="row">
-        <h4 class="text-center"><?= $item['judul']; ?></h4>
+          
         <div class="col-md-4 d-flex justify-content-center align-items-center">
             <?php
               $previous = mysqli_query($koneksi, "SELECT * FROM tbgambar WHERE id_komik='$getid' AND id_gambar < '$getid_gambar' ORDER BY id_gambar DESC LIMIT 1");
@@ -65,7 +65,7 @@ if (!$getid_gambar) {
                     <!-- <div class="col-lg-12">
                         <img class="img-fluid" src="admin/assets/images/komik/<?= $img['gambar_komik']?>" alt="<?= $item['judul']; ?>">
                     </div> -->
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center"><?= $item['judul']; ?></h4>
                     <p><?= $item['deskripsi']; ?></p>
                 </div>
             </div>
