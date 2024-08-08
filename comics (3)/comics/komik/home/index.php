@@ -43,7 +43,7 @@
                                 <div class="thumb">
                                   <a href="?page=komik/detail_komik&id_komik=<?php echo $data['id_komik']; ?>"><img src="admin/assets/images/cover/<?= $data['cover'] ?>" alt=""></a>
                                   <div class="hover-effect">
-                                    <a href="?page=komik/detail_komik&id_komik=<?php echo $data['id_komik']; ?>"><h6><?= $data['deskripsi']; ?></h6></a>
+                                    <a href="?page=komik/detail_komik&id_komik=<?php echo $data['id_komik']; ?>"><h6><?= substr($data['deskripsi'], 0, 60); ?>...</h6></a>
                                   </div>
                                 </div>
                                     <a href="?page=komik/detail_komik&id_komik=<?php echo $data['id_komik']; ?>"><h4><?= $data['judul']; ?><br><span><?= $data['nama_lengkap']?></span></h4></a>

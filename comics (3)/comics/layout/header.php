@@ -47,10 +47,11 @@
               <ul class="nav">
                 <li><a href="?page=home/index" class="active">Home</a></li>
                 <li><a href="?page=home/about">About Us</a></li>
+                <li><a href="?page=paket/home/index">Package</a></li>
                 <?php
 									 if (isset($_SESSION['id_user'])):
 								?>
-                <li><a href="?page=paket/home/index">Package</a></li>
+                
                 <li><a href="?page=library/index">My Library</a></li>
                 <li>
                   <a href="logout.php">Logout<img src="admin/assets/images/user/<?= $_SESSION['foto'] ?>" alt="User-Profile-Image"></a>

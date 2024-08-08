@@ -19,61 +19,64 @@ if (!$getid_gambar) {
     $img = mysqli_fetch_array($img_result);
 }
 ?>
-
-  <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="page-content">
-            <!-- ***** Banner Start ***** -->
-            <div class="main-banner">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="header-text">
-                  <h2 style="font-size: 36px" class="text-center"><?= $item['judul']; ?></h2>
-                    <h6 style="padding-top: 18px" class="text-center">Komik Kebudayaan EnchantIndo Comics</h6>
-                  </div>
-                </div>
-                                    <div class="col-lg-12 col-sm-12">
-                                        <div class="item text-center">
-                                            
-                                        <img class="img-fluid" src="admin/assets/images/komik/<?= $img['gambar_komik']?>" alt="" width="100%" height="auto">
-                                        </div>
-                                    </div>
-                        
-
-                                                      <div class="col-lg-12 d-flex justify-content-between">
-                                                      <?php
-                                                          $previous = mysqli_query($koneksi, "SELECT * FROM tbgambar WHERE id_komik='$getid' AND id_gambar < '$getid_gambar' ORDER BY id_gambar DESC LIMIT 1");
-                                                          if ($prev_img = mysqli_fetch_array($previous)) {
-                                                              $prev_url = "?page=library/content&id_komik={$getid}&id_gambar={$prev_img['id_gambar']}";
-                                                              ?>
-                                                              
-                                            <div class="main-button">
-                                              <a href="<?php echo $prev_url; ?>">Back</a>
-                                            </div>
-
-                                            <?php
-                                                          }
-                                                          $next = mysqli_query($koneksi, "SELECT * FROM tbgambar WHERE id_komik='$getid' AND id_gambar > '$getid_gambar' ORDER BY id_gambar ASC LIMIT 1");
-                                                          if ($next_img = mysqli_fetch_array($next)) {
-                                                              $next_url = "?page=library/content&id_komik={$getid}&id_gambar={$next_img['id_gambar']}";
-                                                              ?>
-                                            <div class="main-button">
-                                              <a href="<?php echo $next_url; ?>">Next</a>
-                                            </div>
-                                            <?php
-                                                          }
-                                                      ?>
-                                        </div>
-
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="page-content">
+        <!-- ***** Banner Start ***** -->
+        <div class="row">
+        <h4 class="text-center"><?= $item['judul']; ?></h4>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <?php
+              $previous = mysqli_query($koneksi, "SELECT * FROM tbgambar WHERE id_komik='$getid' AND id_gambar < '$getid_gambar' ORDER BY id_gambar DESC LIMIT 1");
+              if ($prev_img = mysqli_fetch_array($previous)) {
+                $prev_url = "?page=library/content&id_komik={$getid}&id_gambar={$prev_img['id_gambar']}";
+            ?>
+              <div class="main-button">
+                <a href="<?php echo $prev_url; ?>">Back</a>
               </div>
-            </div>
-            <!-- ***** Banner End ***** -->
+            <?php
+              }
+            ?>
           </div>
+          <div class="col-md-4 d-flex justify-content-center">
+            <img class="img-fluid" src="admin/assets/images/komik/<?= $img['gambar_komik']?>" alt="<?= $item['judul']; ?>">
+          </div>
+
+          <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <?php
+              $next = mysqli_query($koneksi, "SELECT * FROM tbgambar WHERE id_komik='$getid' AND id_gambar > '$getid_gambar' ORDER BY id_gambar ASC LIMIT 1");
+              if ($next_img = mysqli_fetch_array($next)) {
+                $next_url = "?page=library/content&id_komik={$getid}&id_gambar={$next_img['id_gambar']}";
+            ?>
+              <div class="main-button">
+                <a href="<?php echo $next_url; ?>">Next</a>
+              </div>
+            <?php
+              }
+            ?>
+          </div>
+            </div>
+                    
+    <div class="main-profile">
+        <div class="row">
+            <div class="col-lg-12 align-self-center">
+                <div class="main-info header-text">
+                    <!-- <div class="col-lg-12">
+                        <img class="img-fluid" src="admin/assets/images/komik/<?= $img['gambar_komik']?>" alt="<?= $item['judul']; ?>">
+                    </div> -->
+                    <h4 class="text-center"></h4>
+                    <p><?= $item['deskripsi']; ?></p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
 
-    
-   
+         
+        
+        <!-- ***** Banner End ***** -->
+      </div>
+    </div>
+  </div>
+</div>
