@@ -21,10 +21,18 @@ $batas_komik = $item['jumlah_komik'];
                     <h2 style="font-size: 36px">Daftar Komik</h2>
                     <h6 style="padding-top: 18px">Silahkan pilih komik (Maksimal <?= $batas_komik ?> komik)</h6>
                         <div class="most-popular">
-                            <form action="paket/tambah_keranjang.php" method="post">
+                            <form action="paket/proses_checkout.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" value="1" name="kuantitas">
                             <input type="hidden" name="id_paket" value="<?= $item['id_paket'] ?>">
+                            <input type="hidden" name="id_paketsaya" value="<?=$_GET['id_paket']?>">
                             <!-- <input type="hidden" name="max_komik" value="<?= $item['jumlah_komik'] ?>"> -->
+                            <ul>
+                                  <li>
+                                  <h4>Upload Bukti Bayar</h4>
+                                  <br>
+                                  <input type="file" class="form-control" id="bukti_bayar" name="bukti_bayar" required>
+                                  </li>
+                              </ul>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="row">
@@ -50,7 +58,7 @@ $batas_komik = $item['jumlah_komik'];
                                     <?php endwhile; ?>
                                     <div class="col-lg-12">
                                       <div class="main-button">
-                                        <button type="submit">lanjut Pembayaran</button>
+                                        <button type="submit">Lanjut Pembelian</button>
                                       </div>
                                     </div>
                                 </div>

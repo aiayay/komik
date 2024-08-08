@@ -23,6 +23,18 @@ $back = mysqli_fetch_array($prevKomik);
               <div class="col-lg-12">
                 <div class="main-profile">
                   <div class="row">
+                  <div class="col-lg-12 d-flex justify-content-between">
+                        <?php if ($back) : ?>
+                          <div class="main-button">
+                            <a href="?page=komik/detail_komik&id_komik=<?= $back['id_komik']; ?>">Back</a>
+                          </div>
+                        <?php endif; ?>
+                        <?php if ($next) : ?>
+                          <div class="main-button">
+                            <a href="?page=komik/detail_komik&id_komik=<?= $next['id_komik']; ?>">Next</a>
+                          </div>
+                        <?php endif; ?>
+                      </div>
                     <div class="col-lg-4">
                     <a href="?page=komik/detail_komik&id_komik=<?php echo $item['id_komik']; ?>">
                               <img class="img-fluid" src="admin/assets/images/cover/<?= $item['cover']?>" alt="" width="100px" height="100px">
@@ -38,18 +50,7 @@ $back = mysqli_fetch_array($prevKomik);
                   </div>
                 </div>
               </div>
-              <div class="col-lg-12 d-flex justify-content-between">
-                        <?php if ($back) : ?>
-                          <div class="main-button">
-                            <a href="?page=komik/detail_komik&id_komik=<?= $back['id_komik']; ?>">Back</a>
-                          </div>
-                        <?php endif; ?>
-                        <?php if ($next) : ?>
-                          <div class="main-button">
-                            <a href="?page=komik/detail_komik&id_komik=<?= $next['id_komik']; ?>">Next</a>
-                          </div>
-                        <?php endif; ?>
-                      </div>
+              
             </div>
             <!-- ***** Banner End ***** -->
           </div>

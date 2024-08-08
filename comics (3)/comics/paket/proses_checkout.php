@@ -5,8 +5,10 @@ include '../koneksi.php';
 
 $paketterpilih = $_POST['id_paketsaya'];
 $id_user = $_SESSION['id_user'];
+$id_paket =$_POST['id_paket'];
+$id_komik = $_POST['id_komik'];
+$kuantitas = $_POST['kuantitas'];
 date_default_timezone_set('Asia/Jakarta');
-
 
 
 $namafile = $_FILES['bukti_bayar']['name'];
@@ -15,6 +17,10 @@ $namaSementara = $_FILES['bukti_bayar']['tmp_name'];
 $terupload = move_uploaded_file($namaSementara, '../admin/assets/images/bukti_bayar/' . $namafile);
 
 // $paket = mysqli_query($koneksi, "SELECT hari FROM paket ORDER BY id_paket");
+
+foreach($id_komik as $komik_id){
+    $tambah = mysqli_query($koneksi, "INSERT INTO keranjang (id_user,id_komik, id_paket,kuantitas) VALUES ('$id_user','$komik_id', '$id_paket','$kuantitas')");
+}
 
 $keranjangdata = mysqli_query($koneksi,"SELECT * FROM keranjang 
                             JOIN komik ON komik.id_komik = keranjang.id_komik 
@@ -56,12 +62,12 @@ while ($keranjang = mysqli_fetch_array($datakeranjang)){
 $deletequery = mysqli_query($koneksi, "DELETE FROM keranjang where id_user ='$id_user'");
 if ($deletequery){
     echo "<script>
-    alert ('berhasil check out keranjang')
+    alert ('Pembayaran Berhasil')
     window.location.href='../?page=home/index';
     </script>";
 }else {
     echo "<script>
-    alert ('gagal check out keranjang')
+    alert ('Pembayaran Gagal')
     window.location.href = '../?page=home/index';
     </script>";
 }
