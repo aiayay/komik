@@ -8,12 +8,12 @@ $hapus = mysqli_query($koneksi, "DELETE FROM tbgambar WHERE id_gambar='$id_gamba
 if($hapus){
 	echo "<script>
 			alert ('data berhasil dihapus');
-			window.location.href='../?page=komik/detail_komik';
+			window.location.href='../?page=komik/index';
 			</script>";
 }else {
 	echo "<script>
 			alert ('data gagal dihapus');
-			window.location.href='../?page=komik/detail_komik';
+			window.location.href='../?page=komik/index';
 			</script>";
 }
 ?>
