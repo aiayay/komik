@@ -37,7 +37,7 @@
                                         <a href="?page=komik/detail_komik&id_komik=<?= $item['id_komik']; ?>" class="btn btn-success">Lihat</a> 
                                         </td>                                  
                                         <td><a href="?page=komik/ubah&id_komik=<?php echo $item["id_komik"];?>" class="btn btn-success">Ubah</a><br><br>
-                                        <td><a href="?page=komik/tambah_gambar&id_komik=<?php echo $item["id_komik"];?>" class="btn btn-success">Tambah Gambar</a><br><br>
+                                            <a href="?page=komik/tambah_gambar&id_komik=<?php echo $item["id_komik"];?>" class="btn btn-success">Tambah Gambar</a><br><br>
                                             <a onclick="return confirm('yakin mau dihapus??')" href="komik/hapus.php?id_komik=<?php echo $item["id_komik"];?>" class="btn btn-danger">Hapus</a></td>
                                         </td>
                                     </tr>
