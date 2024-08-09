@@ -40,6 +40,10 @@ $item = mysqli_fetch_array($search);
                                                           <option value="member" <?= $item['level']== 'member' ? 'selected' : '' ?>>member</option>
                                                       </select>
                       </div>
+                      <div class="form-group">
+                          <h6 for="">Nomor Telepon</h6>
+                          <input type="number" class="form-control" name="no_hp" value="<?php echo $item ['no_hp'];?>">
+                      </div>
                    
                       <div class="form-group">
                           <h6 for="jenis_kelamin">Jenis Kelamin</h6>
@@ -53,10 +57,7 @@ $item = mysqli_fetch_array($search);
                     </div>
                     <div class="col-lg-15 col-md-6 align-self-center">
                     
-                      <div class="form-group">
-                          <h6 for="">Nomor Telepon</h6>
-                          <input type="number" class="form-control" name="no_hp" value="<?php echo $item ['no_hp'];?>">
-                      </div>
+                     
                       <div class="form-group">
                           <h6 for="">Email</h6>
                           <input type="email" class="form-control" name="email" placeholder=" Masukan email" value="<?php echo $item ['email'];?>">
@@ -69,9 +70,9 @@ $item = mysqli_fetch_array($search);
                       <div class="form-group">
                           <h6 for="">Foto</h6>
                         
-                          <!-- <img src="assets/images/user/<?=$item ['foto']?>" width="100px"> -->
-                                        <input type="hidden" name="foto_lama" value="<?= $item['foto']?>">
-                                        <input type="file" name="foto" class="form-control">
+                          <input type="hidden" name="foto_lama" value="<?= $item['foto']?>">
+                          <input type="file" name="foto" class="form-control">
+                          <img src="assets/images/user/<?=$item ['foto']?>" width="100px" height="200px">
                       </div>
                   </div>
                     </div>
