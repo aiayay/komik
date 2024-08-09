@@ -19,7 +19,32 @@ $batas_komik = $item['jumlah_komik'];
                 <div class="col-lg-12">
                   <div class="header-text">
                     <h2 style="font-size: 36px">Daftar Komik</h2>
-                    <h6 style="padding-top: 18px">Silahkan pilih komik (Maksimal <?= $batas_komik ?> komik)</h6>
+                    <h6 style="padding-top: 18px">Silahkan pilih komik (Maksimal <?= $batas_komik ?> komik)</h6><br>
+                    <div class="payment-info">
+                      <div class="row">
+                          <div class="col-sm-3 label"><h6>Payment </h6></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-2 label"><p>BRI</p></div>
+                          <div class="col-sm-9"><p>: 412201013348508 a.n Siti Rubaiah Al Adawiyah</p></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-2 label"><p>Dana</p></div>
+                          <div class="col-sm-9"><p>: 083829666466</p></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-2 label"><p>Shopeepay</p></div>
+                          <div class="col-sm-9"><p>: 083829666466</p></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-2 label"><p>Gopay</p></div>
+                          <div class="col-sm-9"><p>: 083829666466</p></div>
+                      </div>
+                  </div>
+
+
+
+
                         <div class="most-popular">
                             <form action="paket/proses_checkout.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" value="1" name="kuantitas">
